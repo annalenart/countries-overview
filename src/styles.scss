@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import "colors";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+body {
+  &.theme-light {
+    @each $name, $color in $colors {
+      #{$name}: nth($color, 1);
+    }
+  }
+
+  &.theme-dark {
+    @each $name, $color in $colors {
+      #{$name}: nth($color, 2);
+    }
+  }
+  color: var(--text-color);
+}

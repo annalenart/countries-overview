@@ -1,0 +1,13 @@
+$primary-light: #fafafa;
+$secondary-light: #ffffff;
+$text-dark: #000;
+
+$primary-dark: #202d36;
+$secondary-dark: #2b3743;
+$text-light: #fff;
+
+$colors: (
+  --primary-color: ($primary-light, $primary-dark),
+  --secondary-color: ($secondary-light, $secondary-dark),
+  --text-color: ($text-dark, $text-light),
+)
