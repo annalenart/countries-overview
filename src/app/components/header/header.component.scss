@@ -1,0 +1,17 @@
+.header {
+  background-color: var(--secondary-color);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.button {
+  font-size: inherit;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+

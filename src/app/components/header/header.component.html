@@ -1,0 +1,8 @@
+<header class="header">
+  <p>Where in the world?</p>
+
+  <button class="button" (click)="toggleTheme()" [class.dark]="">
+    <fa-icon [icon]="isLightTheme ? farMoon : fasMoon"></fa-icon>
+    {{ isLightTheme ? 'Dark Mode' : 'Light Mode' }}
+  </button>
+</header>
