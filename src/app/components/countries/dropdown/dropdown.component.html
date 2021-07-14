@@ -1,0 +1,16 @@
+<!--<ng-select-->
+<!--    class="custom"-->
+<!--    [items]="regions"-->
+<!--    bindValue="name"-->
+<!--    bindLabel="displayName"-->
+<!--    [(ngModel)]="pickedQuery"-->
+<!--    placeholder="Filter by Region"-->
+<!--&gt;</ng-select>-->
+<select
+    class="filter-select"
+    [(ngModel)]="pickedQuery"
+>
+  <option class="filter-option" disabled selected style="display: none">Filter by Region</option>
+  <option class="filter-option" *ngFor="let region of regions" [ngValue]="region.name">{{ region.displayName }}</option>
+</select>
+<fa-icon class="filter-icon" [icon]="faFilter"></fa-icon>

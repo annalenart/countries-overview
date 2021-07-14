@@ -1,0 +1,5 @@
+<div class="wrapper">
+  <app-search (queryChanged)="queryList($event)"></app-search>
+  <app-dropdown (selectChanged)="getCountriesByRegion($event)"></app-dropdown>
+</div>
+<app-country-list [countries]="countries || []"></app-country-list>
