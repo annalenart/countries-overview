@@ -15,6 +15,7 @@ import { SearchComponent } from './components/countries/search/search.component'
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ThemeService } from './services/theme.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ThemeService } from './services/theme.service';
     SearchComponent,
     DropdownComponent,
     CountryCardComponent,
-    CountryListComponent
+    CountryListComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

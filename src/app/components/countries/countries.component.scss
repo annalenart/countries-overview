@@ -1,18 +1,14 @@
-:host {
-  flex: 1;
-}
-
 .wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  //justify-content: space-between;
-  //height: 100px;
-  padding: 0 20px;
-  margin: 10px 0;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 130px;
+  padding: 0 30px;
 
-  @media(min-width: 820px) {
-    flex-wrap: nowrap;
-
+  @media(min-width: 752px) {
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

@@ -4,9 +4,6 @@
   grid-gap: 36px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   overflow-y: scroll;
-
-  //@media(min-width: 620px) {
-  //  padding: 0 60px;
-  //}
+  padding: 0 10px;
 }
 

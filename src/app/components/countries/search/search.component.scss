@@ -1,11 +1,14 @@
 :host {
   display: flex;
-  padding: 10px 20px;
   width: 100%;
   border-radius: 5px;
   background-color: var(--secondary-color);
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   position: relative;
+
+  @media(min-width: 752px) {
+    width: 400px;
+  }
 }
 
 .search-input {
@@ -14,8 +17,8 @@
   flex: 1;
   background: none;
   color: var(--text-color);
-  padding-left: 30px;
-  //cursor: pointer;
+  padding: 10px 50px;
+  font: inherit;
 }
 
 .search-icon {

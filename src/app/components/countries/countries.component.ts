@@ -10,15 +10,15 @@ export class CountriesComponent implements OnInit {
   countries: Countries;
   fullSetCountries: Countries;
 
-  constructor(private countriesProvider: CountriesProviderService) {
-  }
+  constructor(private countriesProvider: CountriesProviderService) {}
 
   ngOnInit(): void {
     this.fetchAllCountries();
   }
 
   queryList(query: string): void {
-    this.countries = this.fullSetCountries.filter((country: Country) => country.name.includes(query));
+    query = query.toLowerCase();
+    this.countries = this.fullSetCountries.filter((country: Country) => country.name.toLowerCase().includes(query));
   }
 
   getCountriesByRegion(query: string): void {

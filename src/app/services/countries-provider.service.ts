@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 
 export interface Country {
   name: string;
@@ -14,24 +14,24 @@ export interface Country {
 export interface CountryDetails {
   name: string;
   nativeName: string;
+  flag: string;
   population: number;
   region: string;
   subregion: string;
   capital: string;
   topLevelDomain: Array<string>;
-  currencies: Array<CountryName>;
-  languages: Array<CountryName>;
+  currencies: Array<PropertyName>;
+  languages: Array<PropertyName>;
   borders: Array<string>;
 }
 
-export interface CountryName {
+export interface PropertyName {
   name: string
 }
 
 // export type CountryName2 = Pick<Country, 'name'>;
 
 export type Countries = Array<Country>
-
 
 @Injectable({
   providedIn: 'root'
@@ -54,12 +54,12 @@ export class CountriesProviderService {
     return this.http.get<Array<CountryDetails>>(
       `https://restcountries.eu/rest/v2/name/${name}?fields=flag;name;nativeName;population;region;subregion;capital;topLevelDomain;currencies;languages;borders`)
       .pipe(map((arrCountryDetails: Array<CountryDetails>) => {
-        const [countryDetails] = arrCountryDetails
+        const [countryDetails] = arrCountryDetails;
         return countryDetails;
-      }))
+      }), delay(500)); //  delay for test purposes
   }
 
-  // getCountryByCode(code: string): Observable<CountryName> {
-  // return
-  // }
+  getCountryByCode(code: string): Observable<PropertyName> {
+    return this.http.get<PropertyName>(`https://restcountries.eu/rest/v2/alpha/${code}?fields=name`);
+  }
 }
