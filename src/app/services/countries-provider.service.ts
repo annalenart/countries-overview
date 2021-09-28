@@ -8,7 +8,7 @@ export interface Country {
   flag: string;
   population: number;
   region: string;
-  capital: string
+  capital: string;
 }
 
 export interface CountryDetails {
@@ -26,7 +26,7 @@ export interface CountryDetails {
 }
 
 export interface PropertyName {
-  name: string
+  name: string;
 }
 
 // export type CountryName2 = Pick<Country, 'name'>;
@@ -42,7 +42,6 @@ export class CountriesProviderService {
   }
 
   getCountries(): Observable<Countries> {
-
     return this.http.get<Countries>('https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital');
   }
 
@@ -53,10 +52,7 @@ export class CountriesProviderService {
   getCountryDetails(name: string): Observable<CountryDetails> {
     return this.http.get<Array<CountryDetails>>(
       `https://restcountries.eu/rest/v2/name/${name}?fields=flag;name;nativeName;population;region;subregion;capital;topLevelDomain;currencies;languages;borders`)
-      .pipe(map((arrCountryDetails: Array<CountryDetails>) => {
-        const [countryDetails] = arrCountryDetails;
-        return countryDetails;
-      }), delay(500)); //  delay for test purposes
+      .pipe(map((arrCountryDetails: Array<CountryDetails>) => arrCountryDetails[0]), delay(500)); //  delay for test purposes
   }
 
   getCountryByCode(code: string): Observable<PropertyName> {
