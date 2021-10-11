@@ -12,10 +12,12 @@ export class SearchComponent {
 
   private _searchQuery: string;
 
-  get searchQuery(): string {return this._searchQuery}
+  get searchQuery(): string {
+    return this._searchQuery;
+  }
+
   set searchQuery(query: string) {
     this._searchQuery = query;
     this.queryChanged.emit(query);
   }
-
 }

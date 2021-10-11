@@ -18,7 +18,6 @@
   background: linear-gradient(to right, var(--text-color) 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
   animation: load3 1.4s infinite linear;
-  transform: translateZ(0);
 }
 
 .loader:before {
@@ -44,15 +43,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@-webkit-keyframes load3 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes load3 {

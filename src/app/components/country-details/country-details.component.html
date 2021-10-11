@@ -2,18 +2,13 @@
   <fa-icon class="return-icon" [icon]="faArrowLeft"></fa-icon>
   <span>Back</span>
 </button>
-
 <div class="details-container" *ngIf="countryDetails$ | async as countryDetails; else loading">
-
   <img
       src="{{countryDetails.flag}}"
       alt="{{countryDetails.name}}"
       class="img-responsive">
-
   <div class="info-container">
-
     <span class="card-name">{{countryDetails.name}}</span>
-
     <div class="info">
       <div>
         <span class="bold-text">Native Name: </span>
@@ -36,7 +31,6 @@
         <span>{{countryDetails.capital}}</span>
       </div>
     </div>
-
     <div class="info">
       <div>
         <span class="bold-text">Top Level Domain: </span>
@@ -51,16 +45,13 @@
         <span class="comma" *ngFor="let language of countryDetails.languages">{{language.name}}</span>
       </div>
     </div>
-
-    <div class="borders-info"> <span class="bold-text">Border Countries: </span>
+    <div class="borders-info"><span class="bold-text">Border Countries: </span>
       <div class="border-countries">
         <span class="chips" *ngFor="let border of borders$ | async" [routerLink]="['/countries', border.name]">{{border.name}}</span>
       </div>
     </div>
-
   </div>
 </div>
-
 <ng-template #loading>
   <app-spinner></app-spinner>
 </ng-template>

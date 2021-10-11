@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { faMoon as farMoon } from '@fortawesome/free-regular-svg-icons';
 import { faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit {
   fasMoon = fasMoon;
   isLightTheme: boolean;
 
-  constructor(public themeService: ThemeService) { }
+  constructor(public themeService: ThemeService) {
+  }
 
   ngOnInit(): void {
     this.isLightTheme = this.themeService.isLightTheme();
@@ -21,7 +23,5 @@ export class HeaderComponent implements OnInit {
   toggleTheme() {
     this.themeService.toggleTheme();
     this.isLightTheme = this.themeService.isLightTheme();
-    // this.isLightTheme = !this.isLightTheme;
   }
-
 }

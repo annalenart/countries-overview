@@ -61,10 +61,8 @@
     border-radius: 5px;
 
     @media(min-width: 900px) {
-      min-height: 300px;
-      min-width: 400px;
-      max-height: 400px;
-      max-width: 600px;
+      height: 400px;
+      width: 600px;
     }
   }
 

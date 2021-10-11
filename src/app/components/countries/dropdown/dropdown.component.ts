@@ -23,10 +23,11 @@ export class DropdownComponent {
   private _pickedQuery = 'Filter by Region';
 
   get pickedQuery(): string {
-    return this._pickedQuery}
+    return this._pickedQuery
+  }
+
   set pickedQuery(query: string) {
     this._pickedQuery = query;
     this.selectChanged.emit(query);
   }
-
 }

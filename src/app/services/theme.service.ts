@@ -24,16 +24,8 @@ export class ThemeService {
   }
 
   initTheme(): void {
-    // const startTheme = localStorage.getItem(ThemeService.STORAGE_KEY) || ThemeService.THEME_LIGHT;
-    // this.updateTheme(startTheme);
     this.currentTheme = localStorage.getItem(ThemeService.STORAGE_KEY) || ThemeService.THEME_LIGHT;
   }
-
-  // updateTheme(theme: string): void {
-  //   document.body.className = theme;
-  //   this._currentTheme = theme;
-  //   localStorage.setItem(ThemeService.STORAGE_KEY, theme);
-  // }
 
   toggleTheme(): void {
     if (this._currentTheme === ThemeService.THEME_LIGHT) {
