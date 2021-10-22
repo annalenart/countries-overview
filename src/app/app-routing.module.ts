@@ -6,15 +6,10 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/countries',
-    pathMatch: 'full'
-  },
-  {
-    path: 'countries',
     component: CountriesComponent
   },
   {
-    path: 'countries/:name',
+    path: ':name',
     component: CountryDetailsComponent
   },
   {
