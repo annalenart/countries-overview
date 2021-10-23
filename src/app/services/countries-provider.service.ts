@@ -38,7 +38,7 @@ export class CountriesProviderService {
   }
 
   getByRegion(region: string): Observable<Countries> {
-    return this.http.get<Countries>(`https://restcountries.com/v2/continent/${region}`);
+    return this.http.get<Countries>(`https://restcountries.com/v2/region/${region}`);
   }
 
   getCountryDetails(name: string): Observable<CountryDetails> {
