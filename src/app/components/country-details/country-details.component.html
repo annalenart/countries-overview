@@ -47,7 +47,7 @@
     </div>
     <div class="borders-info"><span class="bold-text">Border Countries: </span>
       <div class="border-countries">
-        <span class="chips" *ngFor="let border of borders$ | async" [routerLink]="['/countries', border.name]">{{border.name}}</span>
+        <span class="chips" *ngFor="let border of borders$ | async" [routerLink]="['..', border.name]">{{border.name}}</span>
       </div>
     </div>
   </div>
